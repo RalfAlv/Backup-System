@@ -8,7 +8,6 @@ import io.grpc.StatusRuntimeException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.security.PublicKey;
 import java.util.Scanner;
 
 public class BackupServiceClient {
@@ -62,7 +61,7 @@ public class BackupServiceClient {
 
     }
 
-    /*Method LIST FILES*/
+    /*Method LIST FILES ..*/
     public void listFiles() {
         ListFileRequest request = ListFileRequest.newBuilder().build();
         try {
@@ -90,6 +89,7 @@ public class BackupServiceClient {
             System.err.println("Error al eliminar el archivo: " + e.getStatus());
         }
     }
+
 
     /*CLI*/
     public void startCLI() {
