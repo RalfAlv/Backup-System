@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package backupservice;
+
+option java_package = "com.proto.backupservice";
+option java_multiple_files = true;
+
+service BackupServiceService{
+  rpc AddFile(AddFileRequest) returns (AddFileResponse){}
+  rpc ListFile(ListFileRequest) returns (ListFileResponse){}
+  rpc DeleteFile(DeleteFileRequest) returns (DeleteFileResponse){}
+}
+
+message AddFileRequest{
+  string fileName = 1;
+  bytes fileContent = 2;
+}
+message AddFileResponse{
+  string message = 1;
+}
+
+message ListFileRequest{}
+message ListFileResponse{
+    message FileInfo {
+      string file_id = 1;
+      string file_name = 2;
+    }
+  repeated FileInfo files = 1;
+}
+
+message DeleteFileRequest{
+  string fileId = 1;
+  string fileName = 2;
+}
+message DeleteFileResponse{
+  string message = 1;
+}
