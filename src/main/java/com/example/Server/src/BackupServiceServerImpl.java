@@ -43,7 +43,7 @@ public class BackupServiceServerImpl extends BackupServiceServiceGrpc.BackupServ
         }
     }
 
-    /* Method ADD FILE*/
+     /* Method ADD FILE*/
     @Override
     public void addFile(AddFileRequest request, StreamObserver<AddFileResponse> responseObserver) {
         String fileName = request.getFileName();
@@ -60,7 +60,7 @@ public class BackupServiceServerImpl extends BackupServiceServiceGrpc.BackupServ
         responseObserver.onCompleted();
     }
 
-    /*Method LIST FILE*/
+     /*Method LIST FILE*/
     @Override
     public void listFile(ListFileRequest request, StreamObserver<ListFileResponse> responseObserver) {
 
@@ -91,7 +91,6 @@ public class BackupServiceServerImpl extends BackupServiceServiceGrpc.BackupServ
     }
 
     /*Method DELETE FILE*/
-
     @Override
     public void deleteFile(DeleteFileRequest request, StreamObserver<DeleteFileResponse> responseObserver) {
 
@@ -116,7 +115,6 @@ public class BackupServiceServerImpl extends BackupServiceServiceGrpc.BackupServ
                     throw new IllegalArgumentException("No se encontró un archivo con el nombre: " + fileName);
                 }
 
-                //UUID idFromFilename = resultSet.one().getUuid("file_id");
                 UUID idFromFilename = row.getUuid("file_id");
 
                 System.out.println("UUID: " + idFromFilename);

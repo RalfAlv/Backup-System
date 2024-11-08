@@ -8,14 +8,14 @@ import java.io.IOException;
 public class BackupServiceServer {
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        BackupServiceServerImpl backupServiceServer = new BackupServiceServerImpl();
+         BackupServiceServerImpl backupServiceServer = new BackupServiceServerImpl();
 
         Server server = ServerBuilder.forPort(50051)
                 .addService(backupServiceServer)
                 .build();
 
         server.start();
-        System.out.println("...... Start GRPC SERVER ......");
+        System.out.println("... Start GRPC SERVER ...");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Received shutdown Request");
