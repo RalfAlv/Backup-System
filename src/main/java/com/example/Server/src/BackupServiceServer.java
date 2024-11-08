@@ -15,7 +15,7 @@ public class BackupServiceServer {
                 .build();
 
         server.start();
-        System.out.println("...Start GRPC SERVER ...");
+        System.out.println("...... Start GRPC SERVER ......");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Received shutdown Request");
